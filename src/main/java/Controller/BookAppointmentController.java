@@ -89,12 +89,21 @@ public class BookAppointmentController implements Initializable {
         }
     }
 
-    public void searchButtonOnAction(ActionEvent event) {
-        String mySymptoms = choice_symptoms.getValue();
-        String healthInfo = tf_additionalinfo.getText();
-        Integer distance = spinner_distance.getValue();
+    @FXML
+    public void searchButtonOnAction(ActionEvent event) throws IOException {
+        String chosenHealthCategory = choice_symptoms.getValue();
+        String chosenAdditionalInfo = tf_additionalinfo.getText();
+        Integer chosenDistance = spinner_distance.getValue();
+
+        //Switch to list_doctor scene
+        Parent root = FXMLLoader.load(getClass().getResource("list_doctor.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
+    @FXML
     public void cancelButtonOnAction(ActionEvent event) throws IOException {
 //        After click, return to the after login stage
         Parent root = FXMLLoader.load(getClass().getResource("after_login.fxml"));

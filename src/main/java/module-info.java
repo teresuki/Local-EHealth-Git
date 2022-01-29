@@ -19,4 +19,7 @@ module com.example.test {
     opens Connection to javafx.fxml;
     exports Main;
     opens Main to javafx.fxml;
+
+    opens Models to javafx.base;
+
 }

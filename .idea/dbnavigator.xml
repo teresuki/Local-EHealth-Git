@@ -26,7 +26,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809">
-        <schema name="ehealth" object-types="table, view" />
+        <schema name="ehealth" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
@@ -45,6 +45,11 @@
     <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.user" active-filter-id="EMPTY_FILTER">
       <filter id="bade8303-3259-4565-91c5-d8dd735b7874" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="accountID" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.admin" active-filter-id="">
+      <filter id="fd7ec32d-b548-4931-9cf8-029b78e73e1b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="adminID" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
   </component>
