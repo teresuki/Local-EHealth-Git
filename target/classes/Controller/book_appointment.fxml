@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.BookAppointmentController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fx:id="image_background" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../../stuff/background.jpg" />
+                    </image>
+                </ImageView>
+                <AnchorPane layoutX="82.0" layoutY="39.0" prefHeight="322.0" prefWidth="435.0" style="-fx-background-color: #ffffff;">
+                    <children>
+                        <Label alignment="CENTER" layoutX="134.0" layoutY="24.0" text="Booking an Appointment">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="26.0" layoutY="44.0" prefHeight="30.0" prefWidth="146.0" text="Select your health category" />
+                        <ChoiceBox fx:id="choice_symptoms" layoutX="26.0" layoutY="72.0" prefHeight="26.0" prefWidth="168.0" />
+                        <Label layoutX="26.0" layoutY="112.0" prefHeight="18.0" prefWidth="166.0" text="Details about your symptoms:" />
+                        <Label layoutX="26.0" layoutY="197.0" text="Distance (kilometers)" />
+                        <Spinner fx:id="spinner_distance" layoutX="145.0" layoutY="192.0" prefHeight="26.0" prefWidth="53.0" />
+                        <Button fx:id="button_search" layoutX="183.0" layoutY="246.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #4BBFE6;" text="SEARCH" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="button_cancel" layoutX="184.0" layoutY="281.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #4BBFE6;" text="CANCEL" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </Button>
+                  <Button fx:id="button_help" contentDisplay="CENTER" graphicTextGap="1.0" layoutX="206.0" layoutY="74.0" mnemonicParsing="false" prefHeight="10.0" prefWidth="20.0" style="-fx-background-radius: 100;" text="?" textAlignment="CENTER">
+                     <tooltip>
+                        <Tooltip fx:id="tooltip_help" maxHeight="300.0" maxWidth="300.0" onShowing="#helpTooltipOnShow" text="Select your health category" wrapText="true">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Tooltip>
+                     </tooltip>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Button>
+                  <TextArea fx:id="tf_additionalinfo" layoutX="22.0" layoutY="132.0" prefHeight="58.0" prefWidth="390.0" promptText="Enter your symptoms description here" wrapText="true" />
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
