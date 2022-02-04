@@ -29,7 +29,7 @@
                            <children>
                               <ScrollPane fx:id="userScrollPane" prefHeight="226.0" prefWidth="564.0">
                                  <content>
-                                    <TableView fx:id="userTableView" prefHeight="211.0" prefWidth="1200.0">
+                                    <TableView fx:id="userTableView" onMouseClicked="#adminUserTableViewOnMouseClicked" prefHeight="211.0" prefWidth="1200.0">
                                       <columns>
                                         <TableColumn fx:id="usernameCol" prefWidth="130.0" text="Username" />
                                         <TableColumn fx:id="emailCol" prefWidth="170.0" text="Email" />

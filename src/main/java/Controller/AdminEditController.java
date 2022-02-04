@@ -6,19 +6,26 @@ import Models.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class AdminEditController implements Initializable {
@@ -93,6 +100,8 @@ public class AdminEditController implements Initializable {
 
     //Load User information to User table
     void loadUserFromDB() throws SQLException {
+        userObserverableList.clear();
+
         Statement stm = DBControl.dbConnection.createStatement();
         ResultSet rs = stm.executeQuery("SELECT username, email, firstName, lastName, address, insuranceID, insuranceType, gender, dateOfBirth\n" +
                 "FROM user");
@@ -147,6 +156,8 @@ public class AdminEditController implements Initializable {
 
     void loadDoctorFromDB() throws SQLException
     {
+        doctorObservableList.clear();
+
         Statement stm = DBControl.dbConnection.createStatement();
         ResultSet rs = stm.executeQuery("SELECT firstName, lastName, address, clinicName, doctorClinicLongitude, doctorClinicLatitude\n" +
                 "FROM doctor");
@@ -173,5 +184,41 @@ public class AdminEditController implements Initializable {
         clinicLatitudeCol.setCellValueFactory(new PropertyValueFactory<>("clinicLatitude"));
 
         doctorTableView.setItems(doctorObservableList);
+    }
+
+    @FXML
+    public void adminUserTableViewOnMouseClicked(MouseEvent event) throws IOException, SQLException {
+        if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
+            adminUserTableOnMouseDoubleClicked();
+        }
+    }
+
+    private void adminUserTableOnMouseDoubleClicked() throws IOException, SQLException {
+        var selectedUser = userTableView.getSelectionModel().getSelectedItem();
+        System.out.println(selectedUser);
+        if (selectedUser != null) {
+            showEditUserDialog(selectedUser);
+            loadUserFromDB();
+        }
+    }
+
+    private void showEditUserDialog(User selectedUser) throws IOException {
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                        "admin_edit_popup.fxml"
+                )
+        );
+
+        Stage stage = new Stage(StageStyle.DECORATED);
+        stage.setScene(
+                new Scene(loader.load())
+        );
+
+        AdminEditPopupController controller = loader.getController();
+        controller.initUserData(selectedUser);
+
+        // We want to disable the parent stage when the user edit dialog is on
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.showAndWait();
     }
 }

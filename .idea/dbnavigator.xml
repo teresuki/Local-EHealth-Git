@@ -26,7 +26,7 @@
     <show-object-properties value="false" />
     <loaded-nodes>
       <connection connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809">
-        <schema name="ehealth" object-types="table, view, procedure, function, constraint, index, column, dataset trigger" />
+        <schema name="ehealth" object-types="table, view, constraint, index, column, dataset trigger" />
       </connection>
     </loaded-nodes>
   </component>
@@ -36,9 +36,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" object-ref="schemas/ehealth/tables/doctor" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="accc1214-b4ce-4e5f-8589-100ce71c3809" />

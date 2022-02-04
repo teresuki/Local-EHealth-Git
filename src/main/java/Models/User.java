@@ -3,7 +3,19 @@ package Models;
 import java.sql.Date;
 import java.time.LocalDate;
 
+
+
 public class User {
+    public static enum InsuranceType {
+        Public,
+        Private
+    }
+
+    public static enum Gender {
+        M,
+        F,
+        O
+    }
     String accountID;
     String username;
     byte[] hashedPassword;
