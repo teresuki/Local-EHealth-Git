@@ -14,14 +14,14 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Controller/login.fxml"));
+        //Connect To Database:
+        DBControl.connectToDatabase();
+
+        Parent root = FXMLLoader.load(getClass().getResource("/Controller/admin_edit.fxml"));
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Welcome!");
         primaryStage.show();
-
-        //Connect To Database:
-        DBControl.connectToDatabase();
 
 
     }

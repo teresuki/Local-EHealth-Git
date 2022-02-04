@@ -1,5 +1,6 @@
 package Controller;
 import Connection.DBControl;
+import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -52,12 +53,12 @@ public class AdminLoginController implements Initializable {
     }
 
     @FXML
-    public void loginButtonOnAction(Event event) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, IOException {
+    public void loginButtonOnAction(ActionEvent event) throws SQLException, NoSuchAlgorithmException, InvalidKeySpecException, IOException {
         if (tf_adminUsername.getText().isBlank() == false && tf_adminPassword.getText().isBlank() == false && validateLogin()) {
 
             label_loginmessage.setText("Welcome admin!");
-            //Switch to log in scene
-//            Parent root = FXMLLoader.load(getClass().getResource("after_login.fxml"));
+            //Switch to Admin Edit scene
+//            Parent root = FXMLLoader.load(getClass().getResource("dmin_edit.fxml"));
 //            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 //            Scene scene = new Scene(root);
 //            stage.setScene(scene);

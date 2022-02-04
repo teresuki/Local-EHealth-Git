@@ -36,18 +36,25 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" object-ref="schemas/ehealth/tables/doctor" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="accc1214-b4ce-4e5f-8589-100ce71c3809" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.doctor" active-filter-id="EMPTY_FILTER">
+      <filter id="1e864a56-595e-4319-9155-1d0117e89099" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="doctorID" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
     <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.user" active-filter-id="EMPTY_FILTER">
       <filter id="bade8303-3259-4565-91c5-d8dd735b7874" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="accountID" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.admin" active-filter-id="">
+    <filter-actions connection-id="accc1214-b4ce-4e5f-8589-100ce71c3809" dataset="ehealth.admin" active-filter-id="EMPTY_FILTER">
       <filter id="fd7ec32d-b548-4931-9cf8-029b78e73e1b" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="adminID" operator="=" value="" active="true" />
       </filter>
